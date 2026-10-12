@@ -163,22 +163,6 @@ gsap.from('.facts b[data-count]', { textContent: 0, duration: 2, ease: 'power2.o
 gsap.to('.hero__title', { yPercent: -18, ease: 'none', scrollTrigger: { trigger: '.hero', start: 'top top', end: 'bottom top', scrub: true } });
 gsap.to('.arch img, .arch__fallback svg', { yPercent: 12, ease: 'none', scrollTrigger: { trigger: '.hero', start: 'top top', end: 'bottom top', scrub: true } });
 
-/* ---------- marquee driven by scroll velocity ---------- */
-(() => {
-  const track = $('.marquee__track');
-  const row = $('.marquee__row');
-  let x = 0, dir = -1, boost = 0;
-  lenis.on('scroll', ({ velocity }) => { boost = Math.abs(velocity) * 0.5; if (velocity) dir = velocity > 0 ? -1 : 1; });
-  gsap.ticker.add(() => {
-    const w = row.offsetWidth;
-    x += dir * ((reduce ? 0 : 1) + boost);
-    boost *= 0.92;
-    if (x <= -w) x += w;
-    if (x > 0) x -= w;
-    track.style.transform = `translate3d(${x}px,0,0)`;
-  });
-})();
-
 /* ---------- zoom-through typographic illusion ---------- */
 (() => {
   const tl = gsap.timeline({ scrollTrigger: { trigger: '.zoom', start: 'top top', end: 'bottom bottom', scrub: 1 } });
