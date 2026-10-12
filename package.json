@@ -1,0 +1,22 @@
+{
+  "name": "kukacares",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Kuka Cares — NDIS disability support, Western Australia",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@fontsource-variable/fraunces": "^5.1.0",
+    "@fontsource-variable/manrope": "^5.1.0",
+    "gsap": "^3.12.5",
+    "lenis": "^1.1.13",
+    "three": "^0.169.0"
+  },
+  "devDependencies": {
+    "vite": "^5.4.10"
+  }
+}
